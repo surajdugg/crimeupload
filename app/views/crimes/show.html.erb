@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @crime.Name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @crime.Location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @crime.Description %>
+</p>
+
+<p>
+  <strong>Ctime:</strong>
+  <%= @crime.Ctime %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @crime.Attachment %>
+</p>
+
+<p>
+  <%= image_tag @crime.image.url(:medium) %>
+</p>
+
+<% if @crime.video? %>
+<h1 class="center">
+<%= @crime.Name %>
+</h1><br />
+<%= video_path @crime.video.url %>       
+<% end %>
+<video width="490" height="275" src="<%= video_path @crime.video.url %>" frameborder="0" allowfullscreen autoplay="true">
+            </video>
+
+<%= link_to 'Edit', edit_crime_path(@crime) %> |
+<%= link_to 'Back', crimes_path %>
