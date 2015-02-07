@@ -1,8 +1,9 @@
 class UserMailer < ActionMailer::Base
   default from: "funkkymadness@gmail.com"
 
-  def sample_email(user)
+  def sample_email(user,crime)
   	@user = user
-  	mail(:to @user.email, subject: 'Sample Email')
+  	@crime = crime
+  	mail(to: @user.email, subject: 'Sample Email')
   end
 end

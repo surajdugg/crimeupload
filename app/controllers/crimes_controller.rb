@@ -21,15 +21,37 @@ class CrimesController < ApplicationController
   def edit
   end
 
+  def locations
+    crimes= Crime.all
+    cr=[]
+    crl=Hash.new
+    crimes.each do |c|
+      cr.inject(c.Location)
+    end
+    print "##############################################################"
+    print "##############################################################"
+    print "##############################################################"
+    print "##############################################################"
+    print cr
+    print "##############################################################"
+    print "##############################################################"
+    print "##############################################################"
+    print "##############################################################"
+  end
+
   # POST /crimes
   # POST /crimes.json
   def create
     @crime = Crime.new(crime_params)
+    @user = current_user
+
+
 
     respond_to do |format|
       if @crime.save
-        format.html { redirect_to @crime, notice: 'Crime was successfully created.' }
+        format.html { redirect_to @crime, notice: 'Crime was successfully uploaded.' }
         format.json { render :show, status: :created, location: @crime }
+        #UserMailer.sample_email(@user,@crime).deliver
       else
         format.html { render :new }
         format.json { render json: @crime.errors, status: :unprocessable_entity }

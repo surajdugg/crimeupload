@@ -4,10 +4,13 @@
 			<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 	</head>
 	<body>
-		<h1>hi<%= @user.name %></h1>
+		<h3>Hello <%= @user.name %>,</h3>
 		<p>
-			Sample mail sent using smtp
+			<h4><font color="red"> ALERT!</h4>
+			There has been a <%= @crime.Name %> at <%= @crime.Location %>.
+			<br>
+			<%= @crime.Description %>
 		</p>
 	</body>
 	</html>
-	
+
