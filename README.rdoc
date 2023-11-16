@@ -1,28 +1,49 @@
-== README
+# Anonymous Crime Reporting App (Ruby on Rails)
+This app allows anonymous crime reporting and viewing reported crimes data.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
+Anonymous crime reporting form
+Submitted reports stored in database
+Dashboard with data visualizations of reported crimes
+Admin section to manage reports
+Report a Crime
+On the report page, users can anonymously submit:
 
-Things you may want to cover:
+### Type of crime
+Location
+Additional details
+No personal identifiable information is collected.
 
-* Ruby version
+### Crime Data Dashboard
+The dashboard displays data visualizations of submitted reports, including:
 
-* System dependencies
+### Total reports by type
+Reports by location
+Reports over time
+Admin Portal
+Admins can:
 
-* Configuration
+### View all submitted reports
+Manage (edit, delete) reports
+Export crime data
+Tech Stack
+Ruby on Rails backend
+PostgreSQL database
+React frontend with Charts.js
+Admin login using Devise gem
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Local Setup
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- Clone repo
+- bundle install
+- rails s to start server
+
+
+## Deployment
+The app can be deployed to Heroku or any Ruby compatible provider.
+
+Configure ENV variables and deploy the Rails app.
+
+License
+This project is open source under the MIT license.
